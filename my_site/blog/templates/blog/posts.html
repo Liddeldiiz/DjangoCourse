@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Posts
+{% endblock %}
+
+{% block content %}
+    {% for post_key in post_keys %}
+        <li><a href="{% url "post-blog" post_key %}">{{ post_key }}</a></li>
+    {% endfor %}
+{% endblock %}

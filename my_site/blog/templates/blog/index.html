@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}"/>
+    <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    
+
+    <section id="welcome">
+        <header> 
+            <img src="{% static "blog/images/porträt.jpg" %}" alt="Liddeldiiz - The Author of this blog"/>
+            <h2>LIDDELDIIZ'S BLOG</h2>
+        </header>
+        <p>Hello, I am Liddeldiiz and this is the content of a course I follow to learn more about Django.</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My latest thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <sectio id="about">
+        <h2>What I Do</h2>
+        <p>
+            I love Programming and creative work
+        </p>
+        <p>
+            Developer and Musician
+        </p>
+    </section>
+{% endblock %}

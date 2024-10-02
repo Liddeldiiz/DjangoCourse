@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ titleOfPost|title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ titleOfPost|title }}</h1>
+    <p>{{ content }}</p>
+    <p>{{ date }}</p>
+{% endblock %}
